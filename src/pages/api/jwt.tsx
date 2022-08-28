@@ -1,9 +1,13 @@
 // This is an example of how to read a JSON Web Token from an API route
+import { NextApiRequest, NextApiResponse } from "next";
 import { getToken } from "next-auth/jwt";
 
 const secret = process.env.NEXT_PUBLIC_NEXTAUTH_SECRET;
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   // If you don't have the NEXTAUTH_SECRET environment variable set,
   // you will have to pass your secret as `secret` to `getToken`
 
